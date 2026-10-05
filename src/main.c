@@ -45,15 +45,15 @@ int main(void)
 			return -1;
 		}
 
-		const int led_value = led_set(button_value);
+		const int led_state = led_set(button_value);
 
-		if (led_value < 0) {
+		if (led_state < 0) {
 			return -1;
 		}
 
-		const int led_state = gpio_emul_output_get(led.port, led.pin);
+		const int led_value = gpio_emul_output_get(led.port, led.pin);
 
-		if (led_state < 0) {
+		if (led_value < 0) {
 			return -1;
 		}
 
